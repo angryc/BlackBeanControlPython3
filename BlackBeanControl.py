@@ -229,7 +229,7 @@ else:
     CommandFromSettings = ''
 
 if CommandFromSettings.strip() != '':
-    DecodedCommand = CommandFromSettings.decode('hex')
+    DecodedCommand = codecs.decode(CommandFromSettings, 'hex')
     RM3Device.send_data(DecodedCommand)
 else:
     RM3Device.enter_learning()
